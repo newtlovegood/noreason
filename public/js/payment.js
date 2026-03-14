@@ -76,9 +76,10 @@ export function processPayment(amount) {
     console.log('[payment] Creating PaymentIntent for $' + amount);
     paymentModalTitle.textContent = `$${amount} for nothing`;
 
-    // Reset button state
-    payNowBtn.classList.remove('btn--loading');
-    payNowBtn.disabled = false;
+    // Reset button state (always get live element since we clone it)
+    const liveBtn = document.getElementById('pay-now-btn');
+    liveBtn.classList.remove('btn--loading');
+    liveBtn.disabled = false;
 
     try {
       const res = await fetch('/api/create-payment-intent', {

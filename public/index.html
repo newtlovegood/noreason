@@ -22,12 +22,26 @@
       <p class="hero__subtitle">The world's most premium way to give <strong>$1</strong> for absolutely nothing.</p>
 
       <div class="hero__dollar" aria-hidden="true">
-        <span class="dollar-sign">$</span><span class="dollar-amount">1</span>
+        <span class="dollar-sign">$</span><span class="dollar-amount" id="hero-amount">1</span>
       </div>
 
       <p class="hero__tagline">No product. No service. No reason.<br>Just vibes.</p>
 
-      <div class="hero__cta">
+      <!-- Unified slider + CTA -->
+      <div class="hero__action">
+        <div class="hero__slider">
+          <input
+            type="range"
+            id="amount-slider"
+            class="slider"
+            min="1"
+            max="99"
+            value="1"
+            step="1"
+            aria-label="Donation amount"
+          >
+          <p class="hero__slider-message" id="slider-message">The perfect amount. Truly.</p>
+        </div>
         <button class="btn btn--primary" id="donate-btn">Donate $1</button>
         <p class="hero__fine-print">Your dollar goes nowhere. That's the point.</p>
       </div>
@@ -55,36 +69,12 @@
     </div>
   </section>
 
-  <!-- ====== SLIDER ====== -->
-  <section class="slider-section" id="slider-section">
-    <div class="slider-section__inner reveal">
-      <p class="slider-section__eyebrow">Feeling generous?</p>
-      <div class="slider-section__amount">
-        <span class="dollar-sign-sm">$</span><span id="slider-value">1</span>
-      </div>
-      <input
-        type="range"
-        id="amount-slider"
-        class="slider"
-        min="1"
-        max="99"
-        value="1"
-        step="1"
-        aria-label="Donation amount"
-      >
-      <p class="slider-section__message" id="slider-message">The perfect amount. Truly.</p>
-      <button class="btn btn--secondary" id="donate-btn-slider">Donate $1</button>
-    </div>
-  </section>
-
   <!-- ====== WALL OF WISHES ====== -->
   <section class="wishes" id="wishes">
     <div class="wishes__inner">
       <h2 class="wishes__title reveal">The Wall of Generous Nothingness</h2>
       <p class="wishes__subtitle reveal">Words from fellow philanthropists of the void.</p>
-      <div class="wishes__grid" id="wishes-grid">
-        <!-- Wish cards injected by wishes.js -->
-      </div>
+      <div class="wishes__grid" id="wishes-grid"></div>
       <div class="wishes__empty" id="wishes-empty">
         <p>No wishes yet. Be the first to say something to the void.</p>
       </div>
@@ -137,7 +127,6 @@
   </footer>
 
   <script src="https://js.stripe.com/v3/"></script>
-  <!-- App modules -->
   <script type="module" src="/js/payment.js"></script>
   <script type="module" src="/js/wishes.js"></script>
   <script type="module" src="/js/app.js"></script>

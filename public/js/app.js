@@ -21,12 +21,12 @@ const revealObserver = new IntersectionObserver(
 
 document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
 
-// --- Slider ---
+// --- Slider (in hero) ---
 
 const slider = document.getElementById('amount-slider');
-const sliderValue = document.getElementById('slider-value');
+const heroAmount = document.getElementById('hero-amount');
 const sliderMessage = document.getElementById('slider-message');
-const donateBtnSlider = document.getElementById('donate-btn-slider');
+const donateBtn = document.getElementById('donate-btn');
 
 const messages = [
   [1, 1, 'The perfect amount. Truly.'],
@@ -53,42 +53,44 @@ let currentAmount = 1;
 function updateSlider() {
   const val = Number(slider.value);
   currentAmount = val;
-  sliderValue.textContent = val;
+
+  // Update the giant hero dollar amount
+  heroAmount.textContent = val;
+
+  // Update message
   sliderMessage.textContent = getSliderMessage(val);
-  donateBtnSlider.textContent = `Donate $${val}`;
+
+  // Update button text
+  donateBtn.textContent = `Donate $${val}`;
 
   // Update the track fill
   const pct = ((val - 1) / 98) * 100;
-  slider.style.background = `linear-gradient(to right, var(--color-accent) ${pct}%, rgba(255,255,255,0.1) ${pct}%)`;
+  slider.style.background = `linear-gradient(to right, rgba(255,255,255,0.35) ${pct}%, rgba(255,255,255,0.08) ${pct}%)`;
 }
 
 slider.addEventListener('input', updateSlider);
 updateSlider();
 
-// --- Donate buttons ---
+// --- Donate button ---
 
-const donateBtn = document.getElementById('donate-btn');
-
-async function handleDonate(amount) {
-  const btn = event?.target || donateBtn;
-  btn.classList.add('btn--loading');
-  btn.disabled = true;
+async function handleDonate() {
+  donateBtn.classList.add('btn--loading');
+  donateBtn.disabled = true;
 
   try {
-    const success = await processPayment(amount);
+    const success = await processPayment(currentAmount);
     if (success) {
-      showThankYou(amount);
+      showThankYou(currentAmount);
     }
   } catch (err) {
     console.error('Payment failed:', err);
   } finally {
-    btn.classList.remove('btn--loading');
-    btn.disabled = false;
+    donateBtn.classList.remove('btn--loading');
+    donateBtn.disabled = false;
   }
 }
 
-donateBtn.addEventListener('click', () => handleDonate(1));
-donateBtnSlider.addEventListener('click', (e) => handleDonate(currentAmount));
+donateBtn.addEventListener('click', handleDonate);
 
 // --- Thank You Modal ---
 
@@ -122,7 +124,6 @@ submitWishBtn.addEventListener('click', async () => {
   try {
     await postWish(message, lastDonatedAmount);
     closeModal();
-    // Scroll to wishes section
     document.getElementById('wishes').scrollIntoView({ behavior: 'smooth' });
   } catch (err) {
     console.error('Failed to post wish:', err);
@@ -133,11 +134,8 @@ submitWishBtn.addEventListener('click', async () => {
 });
 
 skipWishBtn.addEventListener('click', closeModal);
-
-// Close modal on backdrop click
 modal.querySelector('.modal__backdrop').addEventListener('click', closeModal);
 
-// Close on Escape
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && modal.classList.contains('active')) {
     closeModal();
@@ -149,9 +147,7 @@ document.addEventListener('keydown', (e) => {
 const params = new URLSearchParams(window.location.search);
 if (params.get('success') === 'true') {
   const amount = Number(params.get('amount')) || 1;
-  // Clean URL
   window.history.replaceState({}, '', '/');
-  // Show modal after a brief delay for page to render
   setTimeout(() => showThankYou(amount), 500);
 }
 
