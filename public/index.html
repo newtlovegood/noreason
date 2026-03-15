@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>I Need A Dollar — Donate $1 For Absolutely Nothing</title>
-  <meta name="description" content="The world's most premium way to give $1 for absolutely nothing. No product. No service. No reason. Just vibes.">
+  <meta name="description" content="The world's most transparent transaction. You give. You receive nothing. We are all fine with this.">
   <meta property="og:title" content="I Need A Dollar">
-  <meta property="og:description" content="Donate $1 for absolutely nothing. Premium-grade nothingness, crafted with care.">
+  <meta property="og:description" content="Donate $1 for absolutely nothing. The only available option. Always was.">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#0a0a08">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -17,68 +17,95 @@
   <!-- ====== HERO ====== -->
   <section class="hero" id="hero">
     <div class="hero__inner">
-      <p class="hero__eyebrow">Introducing</p>
-      <h1 class="hero__title">I Need A Dollar</h1>
-      <p class="hero__subtitle">The world's most premium way to give <strong>$1</strong> for absolutely nothing.</p>
+      <p class="hero__eyebrow">EST. TODAY &middot; LIMITED QUANTITY: UNLIMITED</p>
+      <h1 class="hero__title">I Need<br>A Dollar</h1>
+      <p class="hero__subtitle">
+        The world's most transparent transaction.<br>
+        You give. You receive nothing.<br>
+        We are all fine with this.
+      </p>
+
+      <div class="hero__cursor" aria-hidden="true">|</div>
 
       <div class="hero__dollar" aria-hidden="true">
         <span class="dollar-sign">$</span><span class="dollar-amount" id="hero-amount">1</span>
       </div>
 
-      <p class="hero__tagline">No product. No service. No reason.<br>Just vibes.</p>
+      <!-- Multiplier buttons -->
+      <div class="multiplier-buttons" id="multiplier-buttons">
+        <button class="multiplier-btn active" data-multiplier="1">
+          <span class="multiplier-btn__label">&times;1</span>
+          <span class="multiplier-btn__price">$1</span>
+        </button>
+        <button class="multiplier-btn" data-multiplier="10">
+          <span class="multiplier-btn__label">&times;10</span>
+          <span class="multiplier-btn__price">$10</span>
+        </button>
+        <button class="multiplier-btn" data-multiplier="100">
+          <span class="multiplier-btn__label">&times;100</span>
+          <span class="multiplier-btn__price">$100</span>
+        </button>
+      </div>
 
-      <!-- Unified slider + CTA -->
-      <div class="hero__action">
-        <div class="hero__slider">
-          <input
-            type="range"
-            id="amount-slider"
-            class="slider"
-            min="1"
-            max="99"
-            value="1"
-            step="1"
-            aria-label="Donation amount"
-          >
-          <p class="hero__slider-message" id="slider-message">The perfect amount. Truly.</p>
-        </div>
-        <button class="btn btn--primary" id="donate-btn">Donate $1</button>
-        <p class="hero__fine-print">Your dollar goes nowhere. That's the point.</p>
+      <p class="hero__tagline"><em>the only available option. always was.</em></p>
+    </div>
+  </section>
+
+  <!-- ====== DIVIDER ====== -->
+  <div class="section-divider"></div>
+
+  <!-- ====== LIVE COUNTER ====== -->
+  <section class="counter-section" id="counter">
+    <div class="counter-box">
+      <div class="counter-box__left">
+        <p class="counter-box__title">PEOPLE WHO DONATED</p>
+        <p class="counter-box__subtitle">for absolutely no reason</p>
+      </div>
+      <div class="counter-box__right">
+        <p class="counter-box__number" id="live-counter">259</p>
+        <p class="counter-box__label">and counting</p>
       </div>
     </div>
   </section>
 
-  <!-- ====== FEATURES ====== -->
-  <section class="features" id="features">
-    <div class="features__grid reveal">
-      <div class="feature">
-        <span class="feature__icon" aria-hidden="true">∅</span>
-        <h3 class="feature__title">Nothing Included</h3>
-        <p class="feature__text">Other platforms give you something. We respect you too much for that.</p>
+  <!-- ====== DIVIDER ====== -->
+  <div class="section-divider"></div>
+
+  <!-- ====== FAQ ====== -->
+  <section class="faq" id="faq">
+    <div class="faq__inner">
+      <div class="faq__item">
+        <p class="faq__question">WHAT DO I GET?</p>
+        <p class="faq__answer"><em>Nothing.</em></p>
       </div>
-      <div class="feature">
-        <span class="feature__icon" aria-hidden="true">∞</span>
-        <h3 class="feature__title">Unlimited Nothing</h3>
-        <p class="feature__text">Your $1 unlocks a lifetime of continued nothingness. No subscription needed.</p>
+      <div class="faq__divider"></div>
+      <div class="faq__item">
+        <p class="faq__question">WHERE DOES MY MONEY GO?</p>
+        <p class="faq__answer"><em>Good question.</em></p>
       </div>
-      <div class="feature">
-        <span class="feature__icon" aria-hidden="true">✦</span>
-        <h3 class="feature__title">Premium Grade</h3>
-        <p class="feature__text">Hand-crafted absence of value, built with the finest lack of materials.</p>
+      <div class="faq__divider"></div>
+      <div class="faq__item">
+        <p class="faq__question">CAN I GIVE MORE THAN $1?</p>
+        <p class="faq__answer"><em>You can. We don't know why you would.</em></p>
       </div>
+      <div class="faq__divider"></div>
+      <div class="faq__item">
+        <p class="faq__question">IS THIS LEGAL?</p>
+        <p class="faq__answer"><em>You're asking about a dollar.</em></p>
+      </div>
+      <div class="faq__divider"></div>
     </div>
   </section>
 
-  <!-- ====== WALL OF WISHES ====== -->
-  <section class="wishes" id="wishes">
-    <div class="wishes__inner">
-      <h2 class="wishes__title reveal">The Wall of Generous Nothingness</h2>
-      <p class="wishes__subtitle reveal">Words from fellow philanthropists of the void.</p>
-      <div class="wishes__grid" id="wishes-grid"></div>
-      <div class="wishes__empty" id="wishes-empty">
-        <p>No wishes yet. Be the first to say something to the void.</p>
-      </div>
-    </div>
+  <!-- ====== BOTTOM CTA ====== -->
+  <section class="bottom-cta" id="bottom-cta">
+    <button class="btn btn--cta" id="donate-btn">
+      DONATE $1 &rarr; RECEIVE NOTHING
+    </button>
+    <p class="bottom-cta__fine-print">
+      <span>No product. No service. No reason.</span><br>
+      <span>Your dollar goes nowhere. That's the point.</span>
+    </p>
   </section>
 
   <!-- ====== PAYMENT MODAL ====== -->
@@ -95,28 +122,136 @@
     </div>
   </div>
 
-  <!-- ====== THANK YOU MODAL ====== -->
-  <div class="modal" id="thank-you-modal" role="dialog" aria-hidden="true">
+  <!-- ====== RECEIPT MODAL ====== -->
+  <div class="modal" id="receipt-modal" role="dialog" aria-hidden="true">
     <div class="modal__backdrop"></div>
-    <div class="modal__content">
-      <p class="modal__eyebrow">Transaction Complete</p>
-      <h2 class="modal__title">You bought nothing.<br>And it was beautiful.</h2>
-      <p class="modal__subtitle">This will appear on your bank statement. Good luck explaining it.</p>
-      <div class="modal__wish-form">
-        <label for="wish-input" class="modal__label">Leave a message for the void</label>
-        <input
-          type="text"
-          id="wish-input"
-          class="modal__input"
-          maxlength="140"
-          placeholder="Your words of wisdom..."
-          autocomplete="off"
-        >
-        <div class="modal__actions">
-          <button class="btn btn--primary" id="submit-wish">Inscribe My Legacy</button>
-          <button class="btn btn--ghost" id="skip-wish">I have nothing to say (fitting)</button>
+    <div class="modal__content modal__content--receipt">
+      <div class="receipt">
+        <div class="receipt__tear receipt__tear--top"></div>
+        <div class="receipt__body">
+          <h2 class="receipt__title">I Need A Dollar</h2>
+          <p class="receipt__info">PURVEYORS OF ABSOLUTELY NOTHING &middot; EST. TODAY</p>
+          <p class="receipt__info">123 VOID ST, THE INTERNET, 00000</p>
+          <p class="receipt__info">SUPPORT@WENEVERRESPOND.COM</p>
+
+          <div class="receipt__meta">
+            <span id="receipt-date">Mar 15, 2026 11:00 AM</span>
+            <span id="receipt-order">ORDER #588</span>
+            <span>CASHIER: nobody</span>
+          </div>
+
+          <div class="receipt__separator"></div>
+
+          <p class="receipt__section-title">ITEMS PURCHASED</p>
+          <div class="receipt__line-separator"></div>
+
+          <div class="receipt__items">
+            <div class="receipt__item">
+              <span>The Experience of Giving&trade;</span>
+              <span>1</span>
+              <span class="receipt__item-price" id="receipt-item-price">$1.00</span>
+            </div>
+            <div class="receipt__item">
+              <span>Peace of mind (not included)</span>
+              <span>0</span>
+              <span class="receipt__item-price--muted">$0.00</span>
+            </div>
+            <div class="receipt__item">
+              <span>Explanation for your actions</span>
+              <span>0</span>
+              <span class="receipt__item-price--muted">$0.00</span>
+            </div>
+            <div class="receipt__item">
+              <span>Sense of purpose</span>
+              <span>0</span>
+              <span class="receipt__item-price--muted">$0.00</span>
+            </div>
+            <div class="receipt__item">
+              <span>Product</span>
+              <span>&mdash;</span>
+              <span class="receipt__item-price--muted">N/A</span>
+            </div>
+            <div class="receipt__item">
+              <span>Service</span>
+              <span>&mdash;</span>
+              <span class="receipt__item-price--muted">N/A</span>
+            </div>
+            <div class="receipt__item">
+              <span>Reason</span>
+              <span>&mdash;</span>
+              <span class="receipt__item-price--muted">N/A</span>
+            </div>
+          </div>
+
+          <div class="receipt__separator"></div>
+
+          <div class="receipt__totals">
+            <div class="receipt__total-line">
+              <span>Subtotal</span>
+              <span class="receipt__total-value" id="receipt-subtotal">$1.00</span>
+            </div>
+            <div class="receipt__total-line">
+              <span>Discount (nothing off nothing)</span>
+              <span class="receipt__total-value--muted">-$0.00</span>
+            </div>
+            <div class="receipt__total-line">
+              <span>Tax (vibes)</span>
+              <span class="receipt__total-value--muted">$0.00</span>
+            </div>
+            <div class="receipt__total-line">
+              <span>Shipping &amp; handling</span>
+              <span class="receipt__total-value--muted">N/A</span>
+            </div>
+            <div class="receipt__total-line">
+              <span>Regret surcharge</span>
+              <span class="receipt__total-value--muted">TBD</span>
+            </div>
+          </div>
+
+          <div class="receipt__line-separator"></div>
+
+          <div class="receipt__grand-total">
+            <span>Total charged</span>
+            <span class="receipt__grand-total-value" id="receipt-total">$1.00</span>
+          </div>
+
+          <div class="receipt__footer-lines">
+            <div class="receipt__total-line">
+              <span>Total value received</span>
+              <span class="receipt__total-value--muted">$0.00</span>
+            </div>
+            <div class="receipt__total-line">
+              <span>Return policy</span>
+              <span class="receipt__total-value--muted">There is nothing to return</span>
+            </div>
+            <div class="receipt__total-line">
+              <span>Warranty</span>
+              <span class="receipt__total-value--muted">On what</span>
+            </div>
+          </div>
+
+          <div class="receipt__separator"></div>
+
+          <div class="receipt__message">
+            <p class="receipt__quote">"Thank you for your dollar. We've moved on."</p>
+            <p class="receipt__customer">You are customer #<strong id="receipt-customer-number">128</strong></p>
+            <p class="receipt__fine">to do this for no reason whatsoever.</p>
+            <p class="receipt__fine">Your dollar is gone. You know this.</p>
+            <p class="receipt__fine">We will not contact you. Ever.</p>
+          </div>
+
+          <div class="receipt__barcode" aria-hidden="true">
+            <div class="receipt__barcode-lines" id="receipt-barcode"></div>
+            <p class="receipt__barcode-number" id="receipt-barcode-number">0000 0000 0001 0000</p>
+          </div>
+
+          <!-- NOTHING DELIVERED stamp -->
+          <div class="receipt__stamp" aria-hidden="true">NOTHING<br>DELIVERED</div>
         </div>
+        <div class="receipt__tear receipt__tear--bottom"></div>
       </div>
+
+      <button class="btn btn--ghost receipt__close" id="close-receipt">Close</button>
     </div>
   </div>
 
@@ -128,7 +263,6 @@
 
   <script src="https://js.stripe.com/v3/"></script>
   <script type="module" src="/js/payment.js"></script>
-  <script type="module" src="/js/wishes.js"></script>
   <script type="module" src="/js/app.js"></script>
 </body>
 </html>

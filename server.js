@@ -65,9 +65,9 @@ app.post('/api/create-payment-intent', async (req, res) => {
   if (!stripe) return res.status(503).json({ error: 'Stripe not configured' });
 
   const amount = Math.round(Number(req.body.amount));
-  if (!amount || amount < 1 || amount > 99) {
+  if (!amount || amount < 1 || amount > 100) {
     console.log('[stripe] Invalid amount:', req.body.amount);
-    return res.status(400).json({ error: 'Amount must be between 1 and 99' });
+    return res.status(400).json({ error: 'Amount must be between 1 and 100' });
   }
 
   try {
@@ -91,9 +91,9 @@ app.post('/api/create-checkout-session', async (req, res) => {
   if (!stripe) return res.status(503).json({ error: 'Stripe not configured' });
 
   const amount = Math.round(Number(req.body.amount));
-  if (!amount || amount < 1 || amount > 99) {
+  if (!amount || amount < 1 || amount > 100) {
     console.log('[stripe] Invalid amount:', req.body.amount);
-    return res.status(400).json({ error: 'Amount must be between 1 and 99' });
+    return res.status(400).json({ error: 'Amount must be between 1 and 100' });
   }
 
   const baseUrl = getBaseUrl(req);
