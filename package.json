@@ -5,10 +5,10 @@
   "type": "module",
   "description": "The world's most premium way to give $1 for absolutely nothing.",
   "main": "server.js",
-  "scripts": {
-    "start": "node --env-file=.env server.js",
-    "dev": "node --env-file=.env --watch server.js"
-  },
+    "scripts": {
+      "start": "node server.js",
+      "dev": "node --env-file=.env --watch server.js"
+    },
   "dependencies": {
     "express": "^5",
     "stripe": "^17"
