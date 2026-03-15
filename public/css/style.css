@@ -256,6 +256,20 @@ body {
   animation: fadeInUp 1s 0.55s var(--ease-out-expo) both;
 }
 
+/* Hero CTA */
+.hero__cta {
+  margin-top: var(--space-lg);
+  animation: fadeInUp 1s 0.65s var(--ease-out-expo) both;
+}
+
+.hero__fine-print {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--color-text-muted);
+  margin-top: var(--space-sm);
+  letter-spacing: 0.02em;
+}
+
 /* ============================================
    SECTION DIVIDER
    ============================================ */
@@ -322,13 +336,6 @@ body {
   transform: scale(1.05);
 }
 
-.counter-box__label {
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  color: var(--color-text-muted);
-  font-style: italic;
-  margin-top: 0.25rem;
-}
 
 /* ============================================
    FAQ
@@ -370,25 +377,6 @@ body {
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.06), transparent);
 }
 
-/* ============================================
-   BOTTOM CTA
-   ============================================ */
-
-.bottom-cta {
-  text-align: center;
-  padding: var(--space-md) var(--space-md) var(--space-xl);
-  max-width: 640px;
-  margin: 0 auto;
-}
-
-.bottom-cta__fine-print {
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  color: var(--color-text-muted);
-  margin-top: var(--space-sm);
-  line-height: 1.8;
-  letter-spacing: 0.02em;
-}
 
 /* ============================================
    BUTTONS

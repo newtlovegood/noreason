@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>I Need A Dollar — Donate $1 For Absolutely Nothing</title>
+  <title>No Reason — Donate $1 For Absolutely Nothing</title>
   <meta name="description" content="The world's most transparent transaction. You give. You receive nothing. We are all fine with this.">
-  <meta property="og:title" content="I Need A Dollar">
+  <meta property="og:title" content="No Reason">
   <meta property="og:description" content="Donate $1 for absolutely nothing. The only available option. Always was.">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#0a0a08">
@@ -18,7 +18,7 @@
   <section class="hero" id="hero">
     <div class="hero__inner">
       <p class="hero__eyebrow">EST. TODAY &middot; LIMITED QUANTITY: UNLIMITED</p>
-      <h1 class="hero__title">I Need<br>A Dollar</h1>
+      <h1 class="hero__title">No<br>Reason</h1>
       <p class="hero__subtitle">
         The world's most transparent transaction.<br>
         You give. You receive nothing.<br>
@@ -28,14 +28,14 @@
       <div class="hero__cursor" aria-hidden="true">|</div>
 
       <div class="hero__dollar" aria-hidden="true">
-        <span class="dollar-sign">$</span><span class="dollar-amount" id="hero-amount">1</span>
+        <span class="dollar-sign">$</span><span class="dollar-amount" id="hero-amount">5</span>
       </div>
 
       <!-- Multiplier buttons -->
       <div class="multiplier-buttons" id="multiplier-buttons">
-        <button class="multiplier-btn active" data-multiplier="1">
-          <span class="multiplier-btn__label">&times;1</span>
-          <span class="multiplier-btn__price">$1</span>
+        <button class="multiplier-btn active" data-multiplier="5">
+          <span class="multiplier-btn__label">&times;5</span>
+          <span class="multiplier-btn__price">$5</span>
         </button>
         <button class="multiplier-btn" data-multiplier="10">
           <span class="multiplier-btn__label">&times;10</span>
@@ -48,6 +48,14 @@
       </div>
 
       <p class="hero__tagline"><em>the only available option. always was.</em></p>
+
+      <!-- CTA -->
+      <div class="hero__cta">
+        <button class="btn btn--cta" id="donate-btn">
+          DONATE $5 &rarr; RECEIVE NOTHING
+        </button>
+        <p class="hero__fine-print">no product. no service. no reason.</p>
+      </div>
     </div>
   </section>
 
@@ -59,11 +67,10 @@
     <div class="counter-box">
       <div class="counter-box__left">
         <p class="counter-box__title">PEOPLE WHO DONATED</p>
-        <p class="counter-box__subtitle">for absolutely no reason</p>
+        <p class="counter-box__subtitle"><em>this number is made up. so is most social proof.</em></p>
       </div>
       <div class="counter-box__right">
         <p class="counter-box__number" id="live-counter">259</p>
-        <p class="counter-box__label">and counting</p>
       </div>
     </div>
   </section>
@@ -85,6 +92,11 @@
       </div>
       <div class="faq__divider"></div>
       <div class="faq__item">
+        <p class="faq__question">WHY WOULD I DO THIS?</p>
+        <p class="faq__answer"><em>We don't know. That's the experiment.</em></p>
+      </div>
+      <div class="faq__divider"></div>
+      <div class="faq__item">
         <p class="faq__question">CAN I GIVE MORE THAN $1?</p>
         <p class="faq__answer"><em>You can. We don't know why you would.</em></p>
       </div>
@@ -95,17 +107,6 @@
       </div>
       <div class="faq__divider"></div>
     </div>
-  </section>
-
-  <!-- ====== BOTTOM CTA ====== -->
-  <section class="bottom-cta" id="bottom-cta">
-    <button class="btn btn--cta" id="donate-btn">
-      DONATE $1 &rarr; RECEIVE NOTHING
-    </button>
-    <p class="bottom-cta__fine-print">
-      <span>No product. No service. No reason.</span><br>
-      <span>Your dollar goes nowhere. That's the point.</span>
-    </p>
   </section>
 
   <!-- ====== PAYMENT MODAL ====== -->
@@ -129,7 +130,7 @@
       <div class="receipt">
         <div class="receipt__tear receipt__tear--top"></div>
         <div class="receipt__body">
-          <h2 class="receipt__title">I Need A Dollar</h2>
+          <h2 class="receipt__title">No Reason</h2>
           <p class="receipt__info">PURVEYORS OF ABSOLUTELY NOTHING &middot; EST. TODAY</p>
           <p class="receipt__info">123 VOID ST, THE INTERNET, 00000</p>
           <p class="receipt__info">SUPPORT@WENEVERRESPOND.COM</p>
@@ -258,7 +259,7 @@
   <!-- ====== FOOTER ====== -->
   <footer class="footer">
     <p>Thank you for your generous contribution to nothing.</p>
-    <p class="footer__copy">&copy; 2026 I Need A Dollar. All rights reserved. No rights were needed.</p>
+    <p class="footer__copy">&copy; 2026 No Reason. All rights reserved. No rights were needed.</p>
   </footer>
 
   <script src="https://js.stripe.com/v3/"></script>

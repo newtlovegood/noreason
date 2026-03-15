@@ -10,7 +10,7 @@ const multiplierBtns = document.querySelectorAll('.multiplier-btn');
 const heroAmount = document.getElementById('hero-amount');
 const donateBtn = document.getElementById('donate-btn');
 
-let currentAmount = 1;
+let currentAmount = 5;
 
 multiplierBtns.forEach((btn) => {
   btn.addEventListener('click', () => {
@@ -25,7 +25,7 @@ multiplierBtns.forEach((btn) => {
     heroAmount.textContent = multiplier;
 
     // Update bottom CTA text
-    donateBtn.textContent = `DONATE $${multiplier} → RECEIVE NOTHING`;
+    donateBtn.textContent = `DONATE $${multiplier} \u2192 RECEIVE NOTHING`;
   });
 });
 
